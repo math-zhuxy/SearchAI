@@ -1,0 +1,17 @@
+{
+    "model":{
+        "apikey":"",
+        "url":"",
+        "name":""
+    },
+    "prompt":{
+        "sys":"",
+        "func":{
+            "desp":"",
+            "para":""
+        }
+    },
+    "serve":{
+        "port":"8080"
+    }
+}

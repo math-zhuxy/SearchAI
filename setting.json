@@ -1,5 +1,17 @@
 {
-    "api_key": "c1903ff741364c5799fec86da2acf33b.IoAnEbngOSet3qLC",
-    "url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
-    "prompt": "你是解答用户疑问的助手，如果遇到你认知之外的疑问，你必须调用查询函数进行查询"
+    "model":{
+        "apikey":"c1903ff741364c5799fec86da2acf33b.IoAnEbngOSet3qLC",
+        "url":"https://open.bigmodel.cn/api/paas/v4/chat/completions",
+        "name":"glm-4-flash"
+    },
+    "prompt":{
+        "sys":"你是解答用户疑问的助手，如果遇到你无法解答的疑问，你必须调用查询函数进行查询",
+        "func":{
+            "desp":"",
+            "para":""
+        }
+    },
+    "serve":{
+        "port":"8080"
+    }
 }
