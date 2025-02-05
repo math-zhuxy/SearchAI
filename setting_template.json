@@ -13,5 +13,9 @@
     },
     "serve":{
         "port":"8080"
+    },
+    "search":{
+        "language":"CN",
+        "max_num": 5
     }
 }
