@@ -1,3 +1,3 @@
-import WebCrawler
+import LLMmodel
 if __name__ == '__main__':
-    print(WebCrawler.get_search_result("你好"))
+    print(LLMmodel.model_communicate("头顶尖尖的是什么意思"))
