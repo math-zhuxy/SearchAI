@@ -84,7 +84,7 @@ def model_communicate(user_message: str)-> str:
                         func_result = WebCrawler.get_search_result(func_args["query"])
                     
                 print("Network query successful")
-                print(func_result)
+                # print(func_result)
                 AllMessages.append(
                     {
                         "role": "tool",
