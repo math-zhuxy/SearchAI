@@ -1,0 +1,29 @@
+#user_input{
+    margin: 2%;
+    padding: 1%;
+    border: 2px solid red;
+    border-radius: 20px;
+}
+#message{
+    max-height: 80vh;
+    overflow-y: scroll;
+    margin: 2%;
+    border: 2px solid red;
+    border-radius: 20px;
+}
+#message::-webkit-scrollbar-track {
+    display: none;
+}
+#message::-webkit-scrollbar-thumb {
+    background-color: #dfa9a9;
+    border-radius: 5px;
+}
+#message::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+#message::-webkit-scrollbar {
+    width: 10px;
+}
+#message::-webkit-scrollbar-button{
+    display: none;
+}
