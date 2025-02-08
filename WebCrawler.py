@@ -19,24 +19,25 @@ def get_search_result(query: str) -> str:
         return "网络有问题"
     
     soup = bs4.BeautifulSoup(response.text, 'html.parser')
-
     ol_b_results = soup.find('ol', attrs={'id': 'b_results'})
+
     final_result: str  = ""
     if ol_b_results:
-        # print(ol_b_results)
         p_tags = ol_b_results.find_all('p')
         if p_tags:
             for index, p_content in enumerate(p_tags):
-                # final_result[index+1] = p_content.text
+                if index == set.web_search_max_num:
+                    break
                 final_result += f"第{index+1}条查询结果：{p_content.text}\n"
         else:
+            print("Failed to parse network data")
             return "解析网络数据失败"
     else:
+        print("Failed to parse network data")
         return "解析网络数据失败"
     
     if "Ref A" in final_result and not re.search(r'[\u4e00-\u9fff]', final_result):
-        return "被 Bing 的反爬虫机制拦截"
+        return "被 Bing 的反爬虫机制拦截，请尝试更新cookie"
 
     print("Get and parse bing data successfully")
     return final_result
-

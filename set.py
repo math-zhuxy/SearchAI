@@ -18,6 +18,7 @@ try:
         sys.exit("setting.json format is wrong")
 
     web_search_cookie = setting_data["search"]["cookie"]
+    web_search_max_num =setting_data["search"]["max_num"]
     
     print("init program done")
 
