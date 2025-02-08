@@ -37,6 +37,7 @@ def get_search_result(query: str) -> str:
         return "解析网络数据失败"
     
     if "Ref A" in final_result and not re.search(r'[\u4e00-\u9fff]', final_result):
+        print("Failed to get Bing information, intercepted by Bing's anti-crawling mechanism")
         return "被 Bing 的反爬虫机制拦截，请尝试更新cookie"
 
     print("Get and parse bing data successfully")
