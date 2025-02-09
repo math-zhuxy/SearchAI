@@ -1,6 +1,18 @@
+#page_title{
+    text-align: center;
+}
+#page_main_body{
+    display: flex;
+    gap: 20px;
+}
+#console_table{
+    border: 3px solid red;
+    border-radius: 20px;
+    padding: 10px;
+}
 #message_box{
     padding: 15px 5px;
-    border: 2px solid red;
+    border: 3px solid red;
     border-radius: 20px;
 }
 #message_list{
@@ -10,9 +22,8 @@
 #user_input{
     align-items: center;
     display: flex;
-    flex: 1;
     padding: 10px 15px;
-    border: 2px solid red;
+    border: 2px solid rgba(105, 91, 91, 0.502);
     border-radius: 20px;
     margin-top: 20px;
 }
@@ -20,7 +31,8 @@
     font-size: large;
     border: none;
     outline: none;
-    width: 80vw;
+    width: 70vw;
+    background-color: white;
 }
 #user_input:hover{
     border: 2px solid blue;
@@ -54,5 +66,22 @@
 }
 #input_button:hover{
     cursor: pointer;
-    border-radius: 3px; 
+    border-radius: 0px; 
+}
+#popup-box {
+    padding: 20px 40px;
+    background-color: rgba(0, 123, 255, 0.8);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: large;
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    opacity: 0;
+    transition: top 1s ease-in-out, opacity 1s ease-in-out; 
+}
+#popup-box.visible {
+    top: 50px;
+    opacity: 1;
 }
