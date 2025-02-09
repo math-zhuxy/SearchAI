@@ -1,29 +1,58 @@
-#user_input{
-    margin: 2%;
-    padding: 1%;
+#message_box{
+    padding: 15px 5px;
     border: 2px solid red;
     border-radius: 20px;
 }
-#message{
-    max-height: 80vh;
+#message_list{
+    max-height: 70vh;
     overflow-y: scroll;
-    margin: 2%;
+}
+#user_input{
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: 10px 15px;
     border: 2px solid red;
     border-radius: 20px;
+    margin-top: 20px;
 }
-#message::-webkit-scrollbar-track {
+#text_input{
+    font-size: large;
+    border: none;
+    outline: none;
+    width: 80vw;
+}
+#user_input:hover{
+    border: 2px solid blue;
+}
+#message_list::-webkit-scrollbar-track {
     display: none;
 }
-#message::-webkit-scrollbar-thumb {
-    background-color: #dfa9a9;
+#message_list::-webkit-scrollbar-thumb {
+    background-color: #b5696992;
     border-radius: 5px;
 }
-#message::-webkit-scrollbar-thumb:hover {
+#message_list::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-#message::-webkit-scrollbar {
+#message_list::-webkit-scrollbar {
     width: 10px;
 }
-#message::-webkit-scrollbar-button{
+#message_list::-webkit-scrollbar-button{
     display: none;
+}
+#input_button{
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url("img/send-message.png");
+    background-size: cover; 
+    background-position: center; 
+    border: none;
+    background-color: white;
+}
+#input_button:hover{
+    cursor: pointer;
+    border-radius: 3px; 
 }
