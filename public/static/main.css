@@ -48,7 +48,7 @@
     background-color: #555;
 }
 #message_list::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 #message_list::-webkit-scrollbar-button{
     display: none;

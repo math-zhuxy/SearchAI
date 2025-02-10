@@ -43,28 +43,38 @@ function SendMessage(txt) {
     .then(response => response.json())
     .then(data => {
         ListaddMessage(false, data.msg)
+
+        var MsgListDiv = document.getElementById("message_list");
+        MsgListDiv.scrollTop = MsgListDiv.scrollHeight - MsgListDiv.clientHeight;
+
         sendButton.style.backgroundImage = 'url("static/img/send-message.png")';
         text_input.disabled = false;
-        text_input.style.cursor = "text";
+        sendButton.disabled = false;
     })
     .catch((error) => {
         console.log(error);
     })
 }
 
-sendButton.addEventListener('click', function() {
-    if(text_input.value === "") {
-        CreatePopupbox("输入文本不能为空", 1500);
-        return;
-    }
-
-    ListaddMessage(true, text_input.value);
-
-    SendMessage(text_input.value);
+window.onload = function() {
+    sendButton.addEventListener('click', function() {
+        if(text_input.value === "") {
+            CreatePopupbox("输入文本不能为空", 1500);
+            return;
+        }
     
-    this.style.backgroundImage = 'url("static/img/stop.png")';
-
-    text_input.value = "";
-    text_input.disabled = true;
-    text_input.style.cursor = "not-allowed";
-});
+        ListaddMessage(true, text_input.value);
+    
+        var MsgListDiv = document.getElementById("message_list");
+        MsgListDiv.scrollTop = MsgListDiv.scrollHeight - MsgListDiv.clientHeight;
+    
+    
+        SendMessage(text_input.value);
+        
+        this.style.backgroundImage = 'url("static/img/stop.png")';
+        this.disabled = true;
+    
+        text_input.value = "";
+        text_input.disabled = true;
+    });
+}
