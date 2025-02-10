@@ -16,7 +16,7 @@ function addMessage(IsUser, txt){
         const msg_ele = `
         <div class="user_msg">
             <p class="user_msg_content">${txt}</p>
-            <img src="static/img/stop.png" alt="User Avatar" class="avatar">
+            <img src="static/img/person.png" alt="User Avatar" class="avatar">
         </div>
         `
         msg_container.innerHTML += msg_ele;
@@ -24,7 +24,7 @@ function addMessage(IsUser, txt){
     else {
         const msg_ele =`
         <div class="ai_msg">
-            <img src="static/img/send-message.png" alt="AI Avatar" class="avatar">
+            <img src="static/img/search.png" alt="AI Avatar" class="ai_avatar">
             <p class="ai_msg_content">${txt}</p>
         </div>
         `
