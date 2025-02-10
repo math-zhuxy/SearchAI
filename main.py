@@ -1,5 +1,7 @@
-import LLMmodel
-if __name__ == '__main__':
-    while True:
-        message = input("输入你的问题：")
-        print(LLMmodel.model_communicate(message))
+from server import SERVER
+import uvicorn
+import set
+
+if __name__ == "__main__":
+    sv = SERVER()
+    uvicorn.run(sv.app, port= set.server_run_port)

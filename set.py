@@ -19,12 +19,14 @@ try:
 
     web_search_cookie = setting_data["search"]["cookie"]
     web_search_max_num =setting_data["search"]["max_num"]
+
+    server_run_port = setting_data["server"]["port"]
     
     print("init program done")
 
-except FileNotFoundError as e:
-    sys.exit(f"file \"setting.json\" not found: {e} ")
-except json.JSONDecodeError as e:
-    sys.exit(f"file \"setting.json\" not found: {e} ")
+except FileNotFoundError:
+    sys.exit("The setting.json file was not found. Please ensure it exists in the current directory.")
+except json.JSONDecodeError:
+    sys.exit("Failed to decode JSON from setting.json. Please check the file's format.")
 except Exception as e:
-    sys.exit(f"unknown error: {e}")
+    sys.exit(f"An unexpected error occurred: {e}")
