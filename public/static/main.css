@@ -31,7 +31,7 @@
     font-size: large;
     border: none;
     outline: none;
-    width: 70vw;
+    width: 60vw;
     background-color: white;
 }
 #user_input:hover{
@@ -90,7 +90,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    margin: 15px;
+    margin: 30px 15px;
 }
 
 .user_msg_content{
@@ -99,7 +99,7 @@
     margin-top: 0px;
     margin-right: 10px;
     background-color: #d2d0ff;
-    max-width: 500px;
+    max-width: 600px;
     word-wrap: break-word; 
     overflow-wrap: break-word; 
 }
@@ -108,7 +108,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 15px;
+    margin: 30px 15px;
 }
 
 .ai_msg_content{
@@ -117,7 +117,7 @@
     margin-top: 0px;
     margin-left: 10px;
     background-color: rgba(255, 128, 172, 0.728);
-    max-width: 500px;
+    max-width: 600px;
     word-wrap: break-word; 
     overflow-wrap: break-word; 
 }
