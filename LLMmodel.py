@@ -68,7 +68,7 @@ def model_communicate(user_message: str)-> str:
     model_response = requests.post(url= set.model_url, headers=req_header, data=json.dumps(req_data))
 
     if model_response.status_code != 200:
-        print("error: can not obtain large language model")
+        print(f"error: can not obtain large language model. response code is: {model_response.status_code}")
         return "模型交互环节出现问题，无法成功获取模型信息，请检查API，模型接口地址和模型名称是否正确"
     
     print("Successfully obtained large language model information")
@@ -94,7 +94,7 @@ def model_communicate(user_message: str)-> str:
         return "模型返回函数出现问题"
     
     func_args = json.loads(model_tool_call["function"]["arguments"])
-    print(f"model query key word: {func_args["query"]}")
+    print(f"model query key word: {func_args['query']}")
     func_result = WebCrawler.get_search_result(func_args["query"])
 
     AllMessages.append(
