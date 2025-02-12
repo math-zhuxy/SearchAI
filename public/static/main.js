@@ -102,7 +102,7 @@ window.onload = function() {
             <thead>
                 <tr>
                     <th>定义</th>
-                    <th>值</th>
+                    <th>说明</th>
                 </tr>
             </thead>
             <tbody>
@@ -111,12 +111,28 @@ window.onload = function() {
                     <td>${UserInfo.api_key}</td>
                 </tr>
                 <tr>
-                    <td>model name</td>
+                    <td>模型名称</td>
                     <td>${UserInfo.model_name}</td>
                 </tr>
                 <tr>
-                    <td>URL</td>
+                    <td>地址</td>
                     <td>${UserInfo.model_url}</td>
+                </tr>
+                <tr>
+                    <td>函数调用</td>
+                    <td>${UserInfo.tool_choice}</td>
+                </tr>
+                <tr>
+                    <td>系统prompt</td>
+                    <td>${UserInfo.sys_prompt}</td>
+                </tr>
+                <tr>
+                    <td>函数描述</td>
+                    <td>${UserInfo.func_desp}</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>${UserInfo.func_para_desp}</td>
                 </tr>
             </tbody>
         </table>

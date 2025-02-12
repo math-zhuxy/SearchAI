@@ -1,4 +1,5 @@
 import json
+import re
 import WebCrawler
 import requests
 import set
@@ -97,6 +98,15 @@ def model_communicate(user_message: str)-> str:
     print(f"model query key word: {func_args['query']}")
     func_result = WebCrawler.get_search_result(func_args["query"])
 
+    if func_result == "网络有问题":
+        return "网络爬虫出现问题，请检查网络连接是否正确"
+    
+    if func_result == "解析网络数据失败":
+        return "Bing 网站更新，网络查询功能暂时无法使用"
+    
+    if func_result == "被 Bing 的反爬虫机制拦截，请尝试更新cookie":
+        return "请更新Cookie，网络查询功能暂时无法使用"
+
     AllMessages.append(
         {
             "role": "tool",
@@ -127,5 +137,5 @@ def model_communicate(user_message: str)-> str:
     
     else:
         print("error: can not obtain large language model")        
-        return "模型交互环节出现问题，无法成功获取模型信息，请检查API，模型接口地址和模型名称是否正确"
+        return "模型交互环节出现问题，无法成功获取模型信息，请检查网络，API，模型接口地址和模型名称是否正确"
 
