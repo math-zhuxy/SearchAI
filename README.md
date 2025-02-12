@@ -66,7 +66,7 @@ pip install -r requirements.txt
 | max_num | 网络查询的最大搜索范围 |
 | cookie | 需要从bing上获取浏览器cookie |
 
-tool包含三种选择： "auto"指的是大模型自动选择是否调用函数，"force"指函数必须强制调用函数，"none"指函数禁止调用函数。
+tool包含三种选择： "auto"指的是大模型自动选择是否调用函数，"force"指模型必须强制调用函数，"none"指模型禁止调用函数。
 
 ### 运行
 
@@ -77,7 +77,12 @@ python main.py
 ```
 
 现在，您可以通过浏览器访问`http://127.0.0.1:port`来查看您的SearchAI应用了。
-
+如果您只是希望使用接口，可以访问`http://127.0.0.1:port/chat`，请求方式为POST，请求JSON格式为：
+```json
+{
+  "msg": "your message"
+}
+```
 
 ## 贡献
 
