@@ -76,7 +76,7 @@ tool包含三种选择： "auto"指的是大模型自动选择是否调用函数
 python main.py
 ```
 
-现在，您可以通过浏览器访问`http://localhost:port`来查看您的SearchAI应用了。
+现在，您可以通过浏览器访问`http://127.0.0.1:port`来查看您的SearchAI应用了。
 
 
 ## 贡献
