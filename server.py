@@ -3,6 +3,7 @@ import fastapi.staticfiles
 import fastapi.templating
 import LLMmodel
 import pydantic
+import set
 
 class MSG(pydantic.BaseModel):
     msg: str
@@ -16,6 +17,18 @@ class SERVER:
         @self.app.get("/")
         async def index(request: fastapi.Request):
             return template.TemplateResponse("main.html", {"request": request})
+        
+        @self.app.get("/init")
+        async def initing():
+            return {
+                "key": set.user_api_key[:20]+"...",
+                "nam": set.model_name,
+                "url": set.model_url[:20]+"...",
+                "tool": set.func_call_choice,
+                "sys": set.system_message,
+                "func": set.function_description,
+                "par": set.func_parameter_description
+            }
 
         @self.app.post("/chat")
         async def process_message(mg: MSG):
